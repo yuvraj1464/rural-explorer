@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rural Explorer | Central India Wildlife (Responsive)</title>
+    <style>
+        /* --- Google Font Import --- */
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500;700&display=swap');
+
+
+        /* --- CSS Variables (Theme) --- */
+        :root {
+            --color-primary: #D2A14A;
+            --color-dark: #222222;
+            --color-light: #FFFFFF;
+            --color-text: #333333;
+            --color-text-light: #E0E0E0;
+            --font-heading: 'Oswald', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+
+        /* --- Basic Reset & Body Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: var(--font-body);
+            background-color: #f0f0f0;
+            color: var(--color-text);
+            display: flex;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+
+        /* --- Brochure Container --- */
+        .brochure-container {
+            width: 100%;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* --- Page Base Styles --- */
+        .page {
+            background-color: var(--color-light);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-bottom: 70px; /* Space for footer */
+            min-height: 1272px; /* A4 aspect ratio for 900px width */
+        }
+       
+        .page-content {
+            flex-grow: 1;
+        }
+       
+        /* --- Reusable Header --- */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 1rem 2rem;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+       
+        .header-separator {
+            color: var(--color-primary);
+        }
+
+
+        /* --- Reusable Footer --- */
+        .page-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--color-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+
+        .footer-url a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-url a:hover {
+            color: var(--color-primary);
+        }
+
+
+        .footer-socials {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+
+        .footer-socials a img {
+            height: 24px;
+            width: 24px;
+            vertical-align: middle;
+        }
+        .footer-page-number {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-dark);
+        }
+
+
+        /* --- Typography & Helpers --- */
+        .section-heading {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--color-dark);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--color-primary);
+            padding-left: 1rem;
+        }
+
+
+        .dark-bg-box {
+            background-color: var(--color-dark);
+            color: var(--color-text-light);
+            padding: 2rem;
+        }
+       
+        .last-url a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+        .last-url a:hover {
+            color: var(--color-primary);
+        }
+        /* --- PAGE 1 STYLES --- */
+        #page-1 .page-content { display: flex; flex-direction: column; }
+        #page-1 .hero { position: relative; background: url('https://github.com/yuvraj1464/rural-explorer/blob/main/page1_img1.jpeg?raw=true') no-repeat center center/cover; height: 475px; display: flex; align-items: flex-end; }
+        #page-1 .hero-text-box { background-color: rgba(0, 0, 0, 0.9); color: var(--color-light); padding: 1.5rem 2rem; width: 55%; margin-left: 1rem; margin-bottom: 0.25rem; }
+        #page-1 .hero-text-box h2 { font-size: 1rem; margin-bottom: 0.5rem; }
+        #page-1 .main-content-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; padding: 2rem; flex-grow: 1; }
+        #page-1 .note-by-founder p { line-height: 1.6; margin-bottom: 1rem; }
+        #page-1 .founder-signature { font-style: italic; }
+        #page-1 .trip-details img { width: 100%; margin-bottom: 1.5rem; }
+        #page-1 .trip-details h3 { font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-light); margin-bottom: 1rem; }
+        #page-1 .trip-details p { line-height: 1.6; margin-bottom: 1rem; }
+
+        /* --- PAGE 2 STYLES --- */
+        #page-2 .page-content { padding: 2rem; display: flex; flex-direction: column; gap: 2rem; }
+        #page-2 .itinerary-top { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        #page-2 .itinerary-top img { width: 100%; height: 100%; object-fit: cover; }
+        #page-2 .itinerary-highlights ul { list-style: none; padding-left: 1rem; }
+        #page-2 .itinerary-highlights li { margin-bottom: 1.2rem; line-height: 1.5; padding-left: 1.5rem; position: relative; }
+        #page-2 .itinerary-highlights li::before { content: '•'; color: var(--color-primary); font-weight: bold; display: inline-block; position: absolute; left: 0; font-size: 1.5rem; }
+        #page-2 .itinerary-highlights .expect-note { margin-top: 1.5rem; font-style: italic; }
+        #page-2 .image-gallery { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 1rem; flex-grow: 1; }
+        #page-2 .gallery-img-large { grid-column: 1 / -1; grid-row: 1 / 2; }
+        #page-2 .gallery-img-small-1 { grid-column: 1 / 2; grid-row: 2 / 3; }
+        #page-2 .gallery-img-small-2 { grid-column: 2 / 3; grid-row: 2 / 3; }
+        #page-2 .image-gallery img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- PAGE 3 STYLES --- */
+        #page-3 .page-content { padding: 2rem; display: grid; grid-template-columns: 1fr 1.5fr; grid-template-rows: repeat(3, auto); gap: 1.5rem; height: 100%; }
+        #page-3 .img-mongoose { grid-area: 1 / 1 / 2 / 2; }
+        #page-3 .img-dhole { grid-area: 2 / 1 / 3 / 2; }
+        #page-3 .img-roller { grid-area: 3 / 1 / 4 / 2; }
+        #page-3 .text-mammals { grid-area: 1 / 2 / 2 / 3; }
+        #page-3 .img-tiger { grid-area: 2 / 2 / 3 / 3; }
+        #page-3 .text-birds { grid-area: 3 / 2 / 4 / 3; }
+        #page-3 .page-content > * { width: 100%; height: 100%; object-fit: cover; }
+        #page-3 .species-text-box { background-color: var(--color-dark); color: var(--color-text-light); padding: 1.5rem; }
+        #page-3 .species-text-box h2 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-light); margin-bottom: 1rem; }
+        #page-3 .species-text-box ul { list-style: none; }
+        #page-3 .species-text-box li { padding-left: 1.5rem; position: relative; margin-bottom: 1rem; line-height: 1.5; }
+        #page-3 .species-text-box li::before { content: '•'; color: var(--color-primary); position: absolute; left: 0; font-size: 1.5rem; }
+
+        /* --- PAGE 4 STYLES --- */
+        #page-4 .page-content { padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; gap: 1.5rem; height: 100%; }
+        #page-4 .img-carrying { grid-area: 1 / 1 / 2 / 2; }
+        #page-4 .text-traditions { grid-area: 1 / 2 / 2 / 3; }
+        #page-4 .img-women { grid-area: 2 / 1 / 3 / 2; }
+        #page-4 .img-men { grid-area: 2 / 2 / 3 / 3; }
+        #page-4 .img-group { grid-area: 3 / 1 / 4 / 2; }
+        #page-4 .text-journey { grid-area: 3 / 2 / 4 / 3; }
+        #page-4 .page-content > img { width: 100%; height: 100%; object-fit: cover; }
+        #page-4 .text-box { background-color: var(--color-dark); color: var(--color-text-light); padding: 1.5rem; }
+        #page-4 .text-box h2 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-light); margin-bottom: 1rem; }
+        #page-4 .text-box p { line-height: 1.6; }
+        #page-4 .text-journey { display: flex; flex-direction: column; justify-content: center; }
+        #page-4 .text-journey blockquote { border-left: 3px solid var(--color-primary); padding-left: 1rem; margin-bottom: 1rem; font-style: italic; }
+        #page-4 .text-journey .guest-note { text-align: right; }
+       
+        /* --- PAGE 5 STYLES --- */
+        #page-5 .page-content { padding: 2rem; display: flex; flex-direction: column; gap: 2rem; }
+        #page-5 .leader-profile { display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; align-items: center; }
+        #page-5 .leader-profile img { width: 100%; height: 50%; object-fit: cover; }
+        #page-5 .leader-info h2 { font-family: var(--font-heading); font-size: 2rem; color: var(--color-dark); margin-bottom: 1rem; }
+        #page-5 .leader-info p { line-height: 1.6; margin-bottom: 1rem; }
+        #page-5 .yogi-profile { border-top: 4px solid var(--color-primary); padding-top: 2rem; }
+       
+        /* --- PAGE 6 STYLES (Corrected) --- */
+
+        /* 1. Prepare the page to contain the background layer */
+        #page-6 {
+            position: relative; /* Crucial for positioning the ::before element */
+        }
+
+        /* 2. Create the full-height background image layer */
+        #page-6::before {
+            content: '';
+            position: absolute;
+            z-index: 0; /* Send this layer behind the content */
+            
+            /* Set the background image on this layer */
+            background: url('https://github.com/yuvraj1464/rural-explorer/blob/main/page6_img3.jpeg?raw=true') no-repeat center top/cover;
+            
+            /* Make the layer cover the page, stopping just above the footer */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 55px; /* Adjust this value if needed to match your footer height */
+        }
+
+        /* 3. Style the main content area */
+        #page-6 .page-content {
+            position: relative; /* Needed to sit on top of the ::before pseudo-element */
+            z-index: 1; /* Ensure content is on top of the background layer */
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 4rem 2rem;
+            flex-grow: 1; /* This will now work as intended */
+            background: none; /* The background is now on the ::before element */
+        }
+        
+        /* 4. Style the content columns */
+        #page-6 .image-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 55%;
+        }
+
+        #page-6 .info-section {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 25rem; /* Your desired offset for the right column */
+        }
+
+        /* 5. Style the individual elements (map, images, info boxes) */
+        #page-6 .map-overlay,
+        #page-6 .second-image-box {
+            width: 100%;
+        }
+
+        #page-6 .map-overlay img,
+        #page-6 .second-image-box img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        #page-6 .info-box {
+            background-color: rgba(34, 34, 34, 0.9);
+            color: var(--color-text-light);
+            padding: 1.5rem;
+        }
+
+        #page-6 .info-box h2 {
+            font-family: var(--font-heading);
+            color: var(--color-light);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #page-6 .info-box h2 img {
+            height: 20px;
+            filter: invert(100%);
+        }
+
+        #page-6 .info-box ul {
+            list-style: none;
+        }
+
+        #page-6 .info-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        #page-6 .info-box li::before {
+            content: "•";
+            color: var(--color-primary);
+            margin-right: 0.5rem;
+        }
+
+        #page-6 .info-box p {
+            line-height: 1.5;
+        }
+
+        #page-6 .contact-box {
+            background-color: rgba(20, 20, 20, 0.9);
+            color: var(--color-text-light);
+            padding: 1rem 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        } 
+
+
+        #page-6 .contact-box a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .responsibility-link {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centers the text and icon on mobile */
+            gap: 0.5rem; /* Adds a small space between text and icon */
+        }
+        
+        .responsibility-link img {
+            height: 20px; /* Or adjust size as needed */
+            filter: invert(100%);
+        }
+
+        /******************************************/
+        /* --- RESPONSIVE STYLES (TABLET) --- */
+        /******************************************/
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0;
+            }
+            .page {
+                min-height: 0; /* Let content define height */
+                padding-bottom: 100px; /* More space for stacked footer */
+            }
+            .page-header {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+            .section-heading {
+                font-size: 1.8rem;
+            }
+            /* Page specific grid stacking */
+            #page-1 .hero-text-box { width: 80%; margin-left: 1rem; margin-bottom: 1rem; padding: 1rem; }
+            #page-1 .main-content-grid,
+            #page-2 .itinerary-top,
+            #page-5 .leader-profile {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            #page-2 .image-gallery,
+            #page-3 .page-content,
+            #page-4 .page-content {
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+            }
+            #page-3 .species-text-box, #page-4 .text-box {
+                order: -1; /* Move text boxes before images when stacked */
+            }
+            #page-3 .img-tiger { order: 0; }
+
+            /* Page 6 Responsive */
+            #page-6 .page-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+            #page-6 .image-column, 
+            #page-6 .info-section {
+                width: 90%;
+                margin-top: 0; /* Reset margin for stacked layout */
+            }
+            #page-6 .info-section {
+                margin-top: 1.5rem; /* Add a bit of space between image column and info */
+            }
+
+            .responsibility-link {
+                justify-content: center; /* Aligns text to the center */
+            }
+
+            /* Footer Responsive */
+            .page-footer {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 1rem;
+                height: auto;
+            }
+        }
+
+        /******************************************/
+        /* --- RESPONSIVE STYLES (MOBILE) --- */
+        /******************************************/
+        @media (max-width: 480px) {
+            body {
+                padding: 0;
+            }
+            .brochure-container {
+                box-shadow: none;
+            }
+            .page-header {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+                font-size: 0.9rem;
+            }
+            .header-separator {
+                display: none;
+            }
+            .section-heading {
+                font-size: 1.5rem;
+                padding-left: 0.75rem;
+            }
+            #page-1 .hero-text-box {
+                width: 90%;
+                margin: 0.5rem;
+            }
+            #page-1 .hero-text-box h2 {
+                font-size: 1.2rem;
+            }
+            p, li {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="brochure-container">
+        <!-- PAGE 1 -->
+        <section id="page-1" class="page">
+            <header class="page-header">
+                <div class="header-title">
+                    <span class="header-separator">|</span>
+                    <span>THE RURAL EXPLORER</span>
+                    <span class="header-separator">|</span>
+                    <span>CENTRAL INDIA WILDLIFE</span>
+                </div>
+                <div class="header-date">JUNE 2025</div>
+            </header>
+            <div class="page-content">
+                <div class="hero">
+                    <div class="hero-text-box">
+                    Welcome to the latest edition of The Rural Explorer, your gateway to India's most breathtaking natural and cultural experiences! This month, we're taking you deep into the wild with incredible wildlife encounters, cultural discoveries, and exclusive travel offers of central India.
+                    </div>
+                </div>
+                <div class="main-content-grid">
+                    <div class="note-by-founder">
+                        <h2 class="section-heading">A NOTE BY SUMANTHA GHOSH</h2>
+                        <p>The forest is never still. Even when it feels quiet, there's movement in the undergrowth, stories in the air, and lives unfolding out of sight. That's what makes returning so rewarding — you don't step into the same jungle twice.</p>
+                        <p>This edition of The Rural Explorer traces one of our most immersive journeys yet through Central India's tiger heartland. From the open meadows of Kanha to the dry bamboo slopes of Tadoba, this route holds deep memories for me — not just of wildlife, but of the communities who have lived alongside it for generations.</p>
+                        <p>As part of our long-standing commitment to local stewardship, this month we've extended support to grassroots efforts around Pench and Tadoba that help provide alternative livelihoods for forest-edge communities. It's a small step in ensuring that the forests remain wild — and that those who protect them feel seen and supported.</p>
+                        <p>Wherever you are reading this from, I hope this journey stirs something within — a reminder of how much the forest gives, and how quietly it asks us to give back.</p>
+                        <p class="founder-signature">— Sumantha Ghosh<br>Founder, The Rural Traveller</p>
+                    </div>
+                    <div class="trip-details">
+                        <img src= "https://github.com/yuvraj1464/rural-explorer/blob/main/Rural%20Traveller%20(June%202025).png?raw=true" alt="Map of Central India Wildlife Parks">
+                        <div class="dark-bg-box">
+                            <h3>TRIP OF THE MONTH</h3>
+                            <p><strong>Central India Wildlife Tour 2025</strong></p>
+                            <p><strong>Duration:</strong> 13 Days | <strong>Best Season:</strong> October–April</p>
+                            <p><strong>Destinations:</strong> Kanha, Pench & Tadoba</p>
+                            <p><strong>Why Now?</strong></p>
+                            <p>As forest canopies thin post-winter and temperatures rise, wildlife movement intensifies—making February to April one of the most productive windows for big cat sightings across Central India.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="page-footer">
+                <div class="footer-url"><a href="https://ruraltraveller.in/" target="_blank">https://ruraltraveller.in/</a></div>
+                <div class="footer-socials">
+                    <a href="https://ruraltraveller.in/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/link%20(1).png?raw=true" alt="Website"></a>
+                    <a href="https://www.instagram.com/theruraltraveller/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/instagram.png?raw=true" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Rural-Traveller/100063554141111/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/facebook-logo.png?raw=true" alt="Facebook"></a>
+                </div>
+                <div class="footer-page-number">| 01</div>
+            </footer>
+        </section>
+
+        <!-- PAGE 2 -->
+        <section id="page-2" class="page">
+            <header class="page-header">
+                <div class="header-title">
+                    <span class="header-separator">|</span>
+                    <span>THE RURAL EXPLORER</span>
+                    <span class="header-separator">|</span>
+                    <span>ITENERARY HIGHLIGHTS</span>
+                </div>
+                <div class="header-date">JUNE 2025</div>
+            </header>
+            <div class="page-content">
+                <div class="itinerary-top">
+                    <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page2_img1.jpeg?raw=true" alt="Pench Tiger Reserve Turia Gate">
+                    <div class="itinerary-highlights">
+                        <ul>
+                            <li><strong>Day 1: Arrival in Nagpur</strong> – Group orientation and rest</li>
+                            <li><strong>Day 2-4: Into Kanha</strong> – Jeep safaris, Barasingha sightings, and sal forest birding</li>
+                            <li><strong>Day 5-7: Exploring Pench</strong> – From Dhole trails to jungle lore</li>
+                            <li><strong>Day 8-11: Discover Tadoba</strong> – Land of high tiger density and bamboo forests</li>
+                            <li><strong>Day 12-13: Return to Nagpur</strong> – Final reflections and departures</li>
+                        </ul>
+                        <p class="expect-note">Expect early starts, hushed rides, and evenings spent sharing sightings under a canopy of stars.</p>
+                    </div>
+                </div>
+                <div class="image-gallery">
+                    <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page2_img2.jpeg?raw=true" alt="Tiger walking in the forest" class="gallery-img-large">
+                    <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page2_img3.jpeg?raw=true" alt="Tadoba Andhari Tiger Reserve sign with a tiger" class="gallery-img-small-1">
+                    <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page2_img4.jpeg?raw=true" alt="Kanha National Park sign" class="gallery-img-small-2">
+                </div>
+            </div>
+            <footer class="page-footer">
+                <div class="footer-url"><a href="https://ruraltraveller.in/" target="_blank">https://ruraltraveller.in/</a></div>
+                <div class="footer-socials">
+                    <a href="https://ruraltraveller.in/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/link%20(1).png?raw=true" alt="Website"></a>
+                    <a href="https://www.instagram.com/theruraltraveller/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/instagram.png?raw=true" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Rural-Traveller/100063554141111/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/facebook-logo.png?raw=true" alt="Facebook"></a>
+                </div>
+                <div class="footer-page-number">| 02</div>
+            </footer>
+        </section>
+
+        <!-- PAGE 3 -->
+        <section id="page-3" class="page">
+            <header class="page-header">
+                <div class="header-title">
+                    <span class="header-separator">|</span>
+                    <span>THE RURAL EXPLORER</span>
+                    <span class="header-separator">|</span>
+                    <span>SPECIES TO WATCH</span>
+                </div>
+                <div class="header-date">JUNE 2025</div>
+            </header>
+            <div class="page-content">
+                <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page3_img1.jpeg?raw=true" alt="Mongoose in the wild" class="img-mongoose">
+                <div class="species-text-box text-mammals">
+                    <h2>MAMMALS AND BIRDS</h2>
+                    <ul>
+                        <li><strong>Hard Ground Barasingha</strong> – Kanha is the only place on Earth where this swamp deer thrives. Once critically endangered, their comeback is a conservation success worth witnessing.</li>
+                        <li><strong>Bengal Tiger</strong> - Central India offers among the highest chances to spot this elusive cat. Each park reveals a different side of the tiger's territory.</li>
+                        <li><strong>Indian Leopard, Dhole, Sloth Bear, Gaur, Rusty-spotted Cat</strong> - From coordinated wild dog hunts to the quiet tread of leopards at dusk, the diversity is a reminder of nature's layered complexity.</li>
+                    </ul>
+                </div>
+                <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page3_img2.jpeg?raw=true" alt="Dhole (Indian wild dog)" class="img-dhole">
+                <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page3_img4.jpeg?raw=true" alt="Bengal Tiger standing by a tree" class="img-tiger">
+                <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page3_img3.jpeg?raw=true" alt="Indian Roller in flight" class="img-roller">
+               
+                <div class="species-text-box text-birds">
+                    <ul>
+                        <li><strong>White-rumped, Indian & Red-headed Vultures</strong> - Critically Endangered scavengers still hold fragile ground in these parks.</li>
+                        <li><strong>Lesser Adjutant Stork, Grey-headed Fish Eagle, Malabar Pied Hornbill, Indian Pitta</strong> - These species bring flashes of colour and surprise to the forest canopy and river edges.</li>
+                    </ul>
+                </div>
+            </div>
+            <footer class="page-footer">
+                <div class="footer-url"><a href="https://ruraltraveller.in/" target="_blank">https://ruraltraveller.in/</a></div>
+                <div class="footer-socials">
+                    <a href="https://ruraltraveller.in/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/link%20(1).png?raw=true" alt="Website"></a>
+                    <a href="https://www.instagram.com/theruraltraveller/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/instagram.png?raw=true" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Rural-Traveller/100063554141111/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/facebook-logo.png?raw=true" alt="Facebook"></a>
+                </div>
+                <div class="footer-page-number">| 03</div>
+            </footer>
+        </section>
+
+        <!-- PAGE 4 -->
+        <section id="page-4" class="page">
+            <header class="page-header">
+                <div class="header-title">
+                    <span class="header-separator">|</span>
+                    <span>THE RURAL EXPLORER</span>
+                    <span class="header-separator">|</span>
+                    <span>TRIBAL STORYTELLING</span>
+                </div>
+                <div class="header-date">JUNE 2025</div>
+            </header>
+            <div class="page-content">
+                <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page4_img1.jpeg?raw=true" alt="Tribal boy carrying basket" class="img-carrying">
+                <div class="text-box text-traditions">
+                    <h2>GOND & BAIGA TRADITIONS</h2>
+                    <p>The forests of Kanha and Pench are home to the Baiga and Gond communities—among India's oldest forest-dwelling tribes. Their myths speak of tigers as kin and forests as elders. The Gonds' forest paintings and the Baigas' intuitive knowledge of medicinal plants are woven into the ecological fabric of the land.</p>
+                    <br>
+                    <p>For travellers seeking more than sightings, time spent understanding these living traditions becomes its own kind of discovery.</p>
+                </div>
+                <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page4_img2.jpeg?raw=true" alt="Baiga or Gond women in traditional attire" class="img-women">
+                <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page4_img4.jpeg?raw=true" alt="Baiga or Gond men with drums" class="img-men">
+                <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page4_img3.jpeg?raw=true" alt="Group of tourists and guides in the forest" class="img-group">
+                <div class="text-box text-journey">
+                    <h2>FIELD JOURNEY ENTRY</h2>
+                    <blockquote>“It was a moment I almost missed. A Barasingha, just beyond the mist, lifting its head as our jeep rounded the bend. Not because it was rare, but because it stood completely still—like the forest had paused around it. We didn't speak for a while after that.”</blockquote>
+                    <p class="guest-note">– Guest Note from March 2025 Tour</p>
+                </div>
+            </div>
+            <footer class="page-footer">
+                <div class="footer-url"><a href="https://ruraltraveller.in/" target="_blank">https://ruraltraveller.in/</a></div>
+                <div class="footer-socials">
+                    <a href="https://ruraltraveller.in/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/link%20(1).png?raw=true" alt="Website"></a>
+                    <a href="https://www.instagram.com/theruraltraveller/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/instagram.png?raw=true" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Rural-Traveller/100063554141111/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/facebook-logo.png?raw=true" alt="Facebook"></a>
+                </div>
+                <div class="footer-page-number">| 04</div>
+            </footer>
+        </section>
+
+        <!-- PAGE 5 -->
+        <section id="page-5" class="page">
+            <header class="page-header">
+                <div class="header-title">
+                    <span class="header-separator">|</span>
+                    <span>THE RURAL EXPLORER</span>
+                    <span class="header-separator">|</span>
+                    <span>OUR TRUE LEADERS</span>
+                </div>
+                <div class="header-date">JUNE 2025</div>
+            </header>
+            <div class="page-content">
+                <div class="leader-profile sumantha-profile">
+                    <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page5_img1.jpeg?raw=true" alt="Portrait of Sumantha Ghosh">
+                    <div class="leader-info">
+                        <h2>SUMANTHA GHOSH</h2>
+                        <p>Sumantha Ghosh has spent over two decades guiding in some of India's most remarkable wild places—but few regions are as close to his heart as Central India. From the vast grasslands of Kanha to the rugged forests of Satpura, the teak woodlands of Pench, and the dry, tiger-rich zones of Tadoba, he knows these landscapes intimately.</p>
+                        <p>Over the years, Sumantha has led countless nature, birding, and photography tours here for international guests, sharing stories shaped by patient observation and years in the field. His experience goes beyond guiding—during Tadoba's early rise as a wildlife destination (2008-09), he was actively involved in training local guides and building on-ground capacity, helping lay the foundation for the quality tourism Tadoba is known for today.</p>
+                        <p>His calm, thoughtful approach makes every outing meaningful—whether tracking a tiger through the bamboo thickets of Pench or identifying a faraway call in Satpura's twilight. Central India is not just a destination for him—it's a long-standing relationship built on respect, learning, and deep listening.</p>
+                    </div>
+                </div>
+                <div class="leader-profile yogi-profile">
+                    <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/page5_img2.jpeg?raw=true" alt="Portrait of Yogember Singh Bisht (Yogi)">
+                    <div class="leader-info">
+                        <h2>YOGEMBER SINGH BISHT (YOGI)</h2>
+                        <p>For over three decades, Yogi has lived and breathed the forests of India. He began his journey in 1993 with the iconic Tiger Tops Corbett Lodge, soon becoming known for his quiet authority in the field—guiding inbound groups through Corbett and working closely with local communities under the Tiger Conservation Programme (T.C.P.C).</p>
+                        <p>His field experience extends beyond Uttarakhand. From contributing to BNHS and SALCON's bird surveys to working with the Kutch Ecological Research Centre, Yogi has spent years in Gujarat's wild country, especially around endangered species like the Great Indian Bustard and Lesser Florican.</p>
+                        <p>Birdwatching remains his first love. Whether tracking tigers or scanning tree canopies for hornbills, Yogi's calm presence and instinctive reading of the forest make him a guide you'll remember long after the journey ends.</p>
+                    </div>
+                </div>
+            </div>
+            <footer class="page-footer">
+                <div class="footer-url"><a href="https://ruraltraveller.in/" target="_blank">https://ruraltraveller.in/</a></div>
+                <div class="footer-socials">
+                    <a href="https://ruraltraveller.in/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/link%20(1).png?raw=true" alt="Website"></a>
+                    <a href="https://www.instagram.com/theruraltraveller/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/instagram.png?raw=true" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Rural-Traveller/100063554141111/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/facebook-logo.png?raw=true" alt="Facebook"></a>
+                </div>
+                <div class="footer-page-number">| 05</div>
+            </footer>
+        </section>
+
+        <!-- PAGE 6 -->
+        <section id="page-6" class="page">
+            <header class="page-header">
+                <div class="header-title">
+                    <span class="header-separator">|</span>
+                    <span>THE RURAL EXPLORER</span>
+                    <span class="header-separator">|</span>
+                    <span>VANGHAT HIGHLIGHTS</span>
+                </div>
+                <div class="header-date">JUNE 2025</div>
+            </header>
+            <div class="page-content">
+                <div class="image-column">
+                    <div class="map-overlay">
+                        <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/Screenshot_2025-07-01_121245-removebg-preview.png?raw=true" alt="Tour route from Nagpur to Pench, Kanha, and Tadoba">
+                    </div>
+                    <div class="second-image-box">
+                        <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/Screenshot_2025-07-01_121400-removebg-preview.png?raw=true" alt="A tiger walking in the forest">
+                    </div>
+                </div>
+                <div class="info-section">
+                    <div class="info-box">
+                        <h2>OUR PARTNERS <img src="https://github.com/yuvraj1464/rural-explorer/blob/main/link%20(1).png?raw=true" alt="link icon"></h2>
+                        <ul class="last-url">
+                            <li><a href="https://www.championjames.com/biography/" target="_blank">James Champion</a></li>
+                            <li><a href="https://gerard-david.com/gerard-david-photographe-animalier/" target="_blank">Gerard David</a></li>
+                            <li><a href="https://www.norfolkbirding.com/" target="_blank">Norfolk Birding</a></li>
+                            <li><a href="https://www.oriolebirding.com/" target="_blank">Oriole Birding</a></li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h2>OUR RESPONSIBILITY</h2>
+                        <p>As part of our mission to give back, we are exploring ways to deepen our engagement in Central India. From Kanha's forest-edge villages to Tadoba's buffer communities, we are in early conversations with local educators and artisans to build collaborative models of support.</p>
+                        <div class="responsibility-link" style="margin-top: 1rem; font-weight: bold; color: var(--color-primary);">
+                            <span class="last-url"><a href="https://www.ruraltraveller.in/blog/our-%22csr%22-conservation-and-social-responsibility">CONSERVATION & SOCIAL RESPONSIBILITY<img src="https://github.com/yuvraj1464/rural-explorer/blob/main/link%20(1).png?raw=true" alt="link icon"></a></span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-box">
+                        <div class="contact-entry">
+                            <strong>India:</strong> <a href="mailto:vanghat@gmail.com">vanghat@gmail.com</a>, 
+                            <br><a href="tel:+919719243939">+91 9719243939</a>
+                        </div>
+                        <div class="contact-entry">
+                            <strong>UK:</strong> <a href="mailto:info@oriolebirding.com">info@oriolebirding.com</a>, 
+                            <br><a href="tel:08009993036">0800 999 3036</a>
+                        </div>
+                    </div>
+                                        
+                </div>
+            </div>
+            <footer class="page-footer">
+                <div class="footer-url"><a href="https://ruraltraveller.in/" target="_blank">https://ruraltraveller.in/</a></div>
+                <div class="footer-socials">
+                    <a href="https://ruraltraveller.in/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/link%20(1).png?raw=true" alt="Website"></a>
+                    <a href="https://www.instagram.com/theruraltraveller/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/instagram.png?raw=true" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Rural-Traveller/100063554141111/" target="_blank"><img src="https://github.com/yuvraj1464/rural-explorer/blob/main/facebook-logo.png?raw=true" alt="Facebook"></a>
+                </div>
+                <div class="footer-page-number">| 06</div>
+            </footer>
+        </section>
+
+    </div>
+
+</body>
+</html>
+
